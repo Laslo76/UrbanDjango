@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic import TemplateView
-
+from .forms import Contactform
 
 users = {}
 
@@ -50,7 +50,7 @@ def sign_up_by_django(request):
                 return render(request, template_name=template_name, context=info)
             users[username] = {'password': password, 'age': age}
             return HttpResponse(f"Приветствуем, {username}!")
-        else:
-            info['form'] = Contactform()
-        return render(request, template_name=template_name, context=info)
+    else:
+        form = Contactform()
+    return render(request, template_name, {'form': form})
 

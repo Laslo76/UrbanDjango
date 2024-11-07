@@ -21,6 +21,7 @@ from task3.views import MainPage as Mainpage3
 from task3.views import Basket as Basket3
 from task3.views import Shop as Shop3
 from task4.views import MainPage, Basket, Shop
+from task5.views import sign_up_by_html, sign_up_by_django
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,6 +32,8 @@ urlpatterns = [
     path('basket/', Basket3.as_view()),
     path('week/', MainPage.as_view()),
     path('shop_week/', Shop.as_view()),
-    path('basket_week/', Basket.as_view())
+    path('basket_week/', Basket.as_view()),
+    path('', sign_up_by_html),
+    path('reg/', sign_up_by_django)
 
 ]
